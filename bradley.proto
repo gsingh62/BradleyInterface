@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+package bradley;
+
+option java_package = "com.galexey.bradley";
+option java_outer_classname = "Bradley";
+
+message Coordinate {
+  required int32 x = 1;
+  required int32 y = 2;
+}
+
+enum NodeType {
+  OPEN_NODE = 0;
+  WALL_NODE = 1;
+  EXIT_NODE = 2;
+}
+
+message Node {
+  required Coordinate coordinate = 1;
+  required NodeType nodeType = 2 [default = OPEN_NODE];
+}
+
+message TurnData {
+  required Coordinate hero = 2;
+}
+
+message GameData {
+  required int32 visibilityRadius = 1;
+  repeated Node map = 2;
+  repeated TurnData turns = 3;
+}
