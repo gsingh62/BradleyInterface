@@ -3,7 +3,7 @@ syntax = "proto3";
 package bradley;
 
 option java_package = "com.galexey.bradley";
-option java_outer_classname = "Bradley";
+option java_outer_classname = "BradleyInterface";
 
 message Coordinate {
   int32 x = 1;
